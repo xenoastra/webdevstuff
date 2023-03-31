@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="EN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Vanessa Lobo">
+        <meta name="description" content="HTML Form">
+        <title>Lab 8 Vanessa Lobo 501015273</title>
+    </head>
+
+    <body>
+    <h1>Lab 8 Vanessa Lobo 501015273</h1>
+        <header>
+            <br>
+            <br>
+        <h2>Problem 1: Greetings based on time of day</h2>
+          <script>
+    var now  = new Date();        
+    var hrs  = now.getHours();    
+    var mins = now.getMinutes();
+    var secs = now.getSeconds();
+
+    if (hrs > 6 && hrs < 12) {
+      document.writeln("<h2>Good Morning!</h2>");
+    } 
+    else if (hrs >= 12 && hrs < 18 ) {
+      document.writeln("<h2>Good Afternoon!</h2>");
+    }
+    else if (hrs >= 18 && hrs < 20 ) {
+      document.writeln("<h2>Good Evening!</h2>");
+    }
+    else{
+      document.writeln("<h2>Good Night!</h2>");
+    }
+    
+    document.writeln("<p>The time is currently "+ hrs + ":" + mins + ":"+ secs + "</p>");
+
+  </script>
+            <h2>Problem 2: Multiplication Table Generator</h2>
+        </header>
+        <form action="https://www.cs.ryerson.ca/~vlobo/lab08b.php" method="get">
+            <label for="rows">Rows:</label>
+            <input type="number" name="rows" id="rows" required>
+
+            <label for="cols">Columns:</label>
+            <input type="number" name="cols" id="cols" required>
+            <input type="submit">
+            <php>
+
+            </php>
+        </form>
+        <br>
+        <br>
+        <br>
+        <hr>
+
+        <?php
+            $host = "localhost";
+            $database = "my_database";
+            $user = "vlobo";
+            $password = "!!!!";
+
+            $connect = mysqli_connect($host, $user, $password, $database) 
+            or die(mysqli_error());
+            echo "<div>Connected to MySQL Database <b>$database</b></div>";
+        ?>
+        <?php
+            $rows = $_GET["rows"];
+            $cols = $_GET["cols"];
+
+            if (($rows >= 3 and $rows <= 12) and ($cols >= 3 and $cols <= 12)){
+                echo $rows . " x " . $cols . " Multiplication Table";
+                echo "<table cellspacing='10' width='200' height='200'>";
+                for ($row = 1; $row <= $rows; $row++) {
+                    echo "<tr>";
+                    for ($col = $row; $col <= $row * $cols; $col += $row) {
+                        echo "<td style=\"width: 72px;\">$col</td>";
+                    }
+                    echo "</tr>";
+                }
+                echo "</table>";
+                if(!isset($_COOKIE["visits"])){
+                    $_COOKIE["visits"] = 0;
+                }
+        
+                $visits = 1 + $_COOKIE["visits"];
+                setcookie("visits", $visits);
+                echo "<h2>Problem 3: Cookie Counter</h2>";
+                echo "<h3>Number of visits to this page: $visits</h3>";
+                 
+                
+            }
+            else{
+                echo "<h4>Number must be between 3 - 12</h4>";
+            }
+            echo "<h2>Problem 4: Halloween Images</h2>";
+        ?>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <footer>
+            <p>Vanessa Lobo</p>
+            <p>Lab 8</p>
+            <p>501015273</p>
+        </footer>
+    </body>
+</html>
