@@ -1,0 +1,67 @@
+<form>
+    <h1> Vanessa Lobo 501015273 Lab 7</h1>
+    <h4>Name: </h4>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname">
+    <label for="fname">Address:</label><br>
+    <input type="text" id="address" name="sname"><br>
+    <label for="lname">City:</label><br>
+    <input type="text" id="city" name="cname"><br>
+    <label for="lname">Postal Code: (L0L 0L0) format</label><br>
+    <input type="text" id="postal" name="pcname"><br>
+    <label for="lname">Province:</label><br>
+    <select id="pcname" name="province">
+        <option value="ab">Alberta</option>
+        <option value="bc">British Columbia</option>
+        <option value="m">Manitoba</option>
+        <option value="nb">New Brunswick</option>
+        <option value="nfl">Newfoundland and Labrador</option>
+        <option value="nwt">Northwest Territories</option>
+        <option value="ns">Nova Scotia</option>
+        <option value="nun">Nunavut</option>
+        <option value="on">Ontario</option>
+        <option value="pei">Prince Edward Island</option>
+        <option value="qc">Quebec</option>     
+        <option value="sk">Saskatchewan</option>
+        <option value="yk">Yukon</option>
+        
+      </select>
+    <br>
+    <h4>Personal Info: </h4>
+    <label for="lname">Phone Number:</label><br>
+    <input type="text" id="phone" name="pn"><br>
+    <label for="lname">Email:</label><br>
+    <input type="text" id="email" name="email"><br>
+    <label for="lname">Photo:</label><br>
+    <br>
+    <form action="/action_page.php">
+        <input type="file" id="myFile" name="filename">
+        <br>
+        <br>
+        <br>
+        <button onclick="button()">Submit</button>
+      </form>
+      
+
+  </form>
+  <script>
+    function button(){
+        var strText = document.getElementById("fname").value;          
+        var strText1 = document.getElementById("lname").value;
+        var result = strText + '\n' + strText1;
+    }
+    function testVariable() {
+        var strText = document.getElementById("fname").value;          
+        var strText1 = document.getElementById("lname").value;
+        var result = strText + '\n' + strText1;
+       
+         
+    }
+</script>
+  <!-- <style>
+  .form{
+    content: center;
+  } 
+</style> -->
