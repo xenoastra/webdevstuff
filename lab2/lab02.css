@@ -1,0 +1,90 @@
+/* class --
+● id
+● box model: margin, padding, border--
+● hover - invoke a noticeable action for a set or single html element--
+● target (optional - not in the course slides)
+● layout with float, grid, or flexbox (not needed to use all)
+● use both absolute and relative units
+● show and hide element (display or visibility properties)
+● layering (z-index)
+● other css features are allowed */
+
+body {
+  /*background-image: url("https://i.imgur.com/YS6pHB0.png");*/
+  background-color: rgb(6, 90, 247);
+ }
+           .body {
+   position: absolute;
+   left: 100px;
+   top: 0px;
+   z-index: -1;
+ }
+           img {
+   position: relative;
+   left: 10px;
+   top: 0px;
+   z-index: -1;
+   
+ }
+   p:hover {
+     background-color: rgb(197, 12, 126);
+   }
+     figcaption:hover {
+     background-color: rgb(153, 28, 143);
+   }
+     h2:hover {
+     background-color: rgb(177, 103, 220);
+   }
+   p{
+   text-align: center;
+   
+   }
+   h2{
+   text-align: center;
+   }
+
+   nav{
+   text-align: center;
+   }
+      nav:hover{
+   text-align: center;
+   }
+   details{
+   text-align: center;
+   }
+   a {
+   display: block;
+ }
+ style{
+ text-align: center;
+ }
+ #a {
+   background-color: pink;
+ }
+ div {
+    width: 700px;
+    border: 15px solid rgb(170, 28, 183);
+    padding: 50px;
+    margin: 20px;
+         position: relative;
+     left: 100px;
+     top: 0px;
+     z-index: -1;
+    
+  }
+  div:hover {
+    background-color: rgb(187, 166, 244);
+  }
+  div2 {
+    width: 1900px;
+    border: 15px solid rgb(170, 28, 183);
+    padding: 50px;
+    margin: 20px;
+  }
+ 
+
+  /* CSS requirements usage of following for styling (All styling must be done in one external css file):
+
+● id
+● use both absolute and relative units
+● show and hide element (display or visibility properties)
